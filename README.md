@@ -4,7 +4,7 @@ This repository contains a data science project focused on analyzing financial d
 
 ## Project Structure
 
-The project is organized into three main components:
+The project is organized into four main components:
 
 ### Main Directory
 - `Task 3 - feature_engineering.ipynb`: Jupyter notebook containing feature engineering processes
@@ -28,6 +28,15 @@ The project is organized into three main components:
 ### Modeling Directory
 - Contains the churn prediction model implementation using Random Forest
 
+### Web Application
+- `app.py`: Streamlit web application for making churn predictions
+- `train_model.py`: Script to train and save the Random Forest model
+- `app_demo.py`: Demo script showing model functionality
+- `streamlit_app_mockup.md`: Visual representation of the web interface
+- `requirements.txt`: List of required Python packages
+- `models/`: Directory containing the trained model and feature names
+- `feature_importance.png`: Visualization of feature importance
+
 ## Project Overview
 
 This project involves analyzing financial data to identify patterns and relationships that can be used for predictive modeling. The workflow includes:
@@ -36,6 +45,7 @@ This project involves analyzing financial data to identify patterns and relation
 2. **Feature Engineering**: Creating new features from existing data to improve model performance
 3. **Feature Analysis**: Analyzing the importance and relationships between features
 4. **Predictive Modeling**: Building a Random Forest classifier to predict customer churn
+5. **Web Interface**: Creating a user-friendly application for making predictions
 
 ## Churn Prediction Model
 
@@ -52,6 +62,25 @@ The churn prediction component of this project uses a Random Forest classifier t
 
 The model is designed to help businesses identify customers at risk of churning, allowing for targeted retention strategies.
 
+## Web Interface
+
+The project includes a web application built with Streamlit that provides:
+
+- A user-friendly interface for entering customer data
+- Real-time predictions of churn probability
+- Visual representation of prediction results
+- Recommendations based on prediction outcome
+- Model information and feature importance visualization
+
+The web interface makes the model accessible to non-technical users, allowing them to:
+
+- Input customer information through an organized form
+- Receive clear predictions with probability scores
+- Understand the factors driving churn through visualizations
+- Get actionable recommendations for retention strategies
+
+![Feature Importance](feature_importance.png)
+
 ## Technologies Used
 
 - Python
@@ -59,21 +88,34 @@ The model is designed to help businesses identify customers at risk of churning,
 - Scikit-learn for machine learning models
 - Jupyter Notebooks for interactive analysis
 - Data visualization libraries (Matplotlib, Seaborn)
+- Streamlit for the web application
+- Pickle for model serialization
 
 ## Getting Started
 
 To run this project locally:
 
 1. Clone the repository
-2. Install the required dependencies (requirements.txt to be added)
+2. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 3. Run the Jupyter notebooks to see the analysis process
 4. Execute the Python scripts for specific feature engineering tasks
 5. Run the modeling notebook to train and evaluate the churn prediction model
+6. Train and save the model for the web app:
+   ```
+   python train_model.py
+   ```
+7. Launch the web application:
+   ```
+   streamlit run app.py
+   ```
 
 ## Future Work
 
 - Implement additional machine learning models for comparison
 - Optimize feature selection for better model performance
 - Expand the analysis to include additional financial metrics
-- Deploy the model as a web application for real-time predictions
+- Add more advanced visualizations to the web interface
 - Implement model monitoring and retraining pipeline

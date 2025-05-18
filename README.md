@@ -1,13 +1,14 @@
 # Financial Data Prediction App
 
-This repository contains a data science project focused on analyzing financial data, performing exploratory data analysis (EDA), and engineering features for predictive modeling.
+This repository contains a data science project focused on analyzing financial data, performing exploratory data analysis (EDA), engineering features for predictive modeling, and implementing machine learning models for churn prediction.
 
 ## Project Structure
 
-The project is organized into two main components:
+The project is organized into three main components:
 
 ### Main Directory
 - `Task 3 - feature_engineering.ipynb`: Jupyter notebook containing feature engineering processes
+- `Task_4_modeling_completed.ipynb`: Jupyter notebook with Random Forest model for churn prediction
 - `generate_features.py`: Python script for generating features from the dataset
 - `simple_feature_analysis.py`: Python script for basic feature analysis
 - `feature_engineering_summary.md`: Summary of the feature engineering process and findings
@@ -15,6 +16,7 @@ The project is organized into two main components:
 - `engineered_features.csv`: Dataset with engineered features
 - `feature_correlations.csv`: Correlation matrix of features
 - `price_data.csv`: Financial price data
+- `data_for_predictions.csv`: Dataset used for churn prediction modeling
 
 ### EDA Directory
 - `EDA_Analysis.ipynb`: Jupyter notebook containing exploratory data analysis
@@ -23,6 +25,9 @@ The project is organized into two main components:
 - `client_data.csv`: Raw client data
 - `price_data.csv`: Raw price data
 
+### Modeling Directory
+- Contains the churn prediction model implementation using Random Forest
+
 ## Project Overview
 
 This project involves analyzing financial data to identify patterns and relationships that can be used for predictive modeling. The workflow includes:
@@ -30,13 +35,30 @@ This project involves analyzing financial data to identify patterns and relation
 1. **Exploratory Data Analysis (EDA)**: Understanding the data structure, identifying patterns, and cleaning the dataset
 2. **Feature Engineering**: Creating new features from existing data to improve model performance
 3. **Feature Analysis**: Analyzing the importance and relationships between features
+4. **Predictive Modeling**: Building a Random Forest classifier to predict customer churn
+
+## Churn Prediction Model
+
+The churn prediction component of this project uses a Random Forest classifier to predict customer churn based on various features. The model implementation includes:
+
+- Data preparation and exploration
+- Model training with optimized hyperparameters
+- Comprehensive evaluation using multiple metrics:
+  - Accuracy, Precision, Recall, F1-Score, ROC-AUC
+  - Confusion matrix visualization
+  - ROC and Precision-Recall curves
+- Feature importance analysis to identify key drivers of churn
+- Detailed explanations of evaluation metrics and model performance assessment
+
+The model is designed to help businesses identify customers at risk of churning, allowing for targeted retention strategies.
 
 ## Technologies Used
 
 - Python
 - Pandas for data manipulation
+- Scikit-learn for machine learning models
 - Jupyter Notebooks for interactive analysis
-- Data visualization libraries (likely Matplotlib, Seaborn)
+- Data visualization libraries (Matplotlib, Seaborn)
 
 ## Getting Started
 
@@ -46,9 +68,12 @@ To run this project locally:
 2. Install the required dependencies (requirements.txt to be added)
 3. Run the Jupyter notebooks to see the analysis process
 4. Execute the Python scripts for specific feature engineering tasks
+5. Run the modeling notebook to train and evaluate the churn prediction model
 
 ## Future Work
 
-- Implement machine learning models using the engineered features
+- Implement additional machine learning models for comparison
 - Optimize feature selection for better model performance
 - Expand the analysis to include additional financial metrics
+- Deploy the model as a web application for real-time predictions
+- Implement model monitoring and retraining pipeline
